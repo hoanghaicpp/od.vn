@@ -208,7 +208,7 @@ public class SignupActivity extends AppCompatActivity implements GoogleApiClient
     public Boolean validateEmail() {
         String val = signupEmail.getText().toString();
         if (val.isEmpty()) {
-            signupEmail.setError("Mail không thể bỏ trống thể bỏ trống");
+            signupEmail.setError("Mail không thể bỏ trống");
             return false;
         } else {
             if(userValidator.validateEmail(val)){
