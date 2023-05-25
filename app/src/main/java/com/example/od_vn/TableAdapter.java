@@ -128,6 +128,7 @@ public class TableAdapter extends RecyclerView.Adapter<TableViewHolder> {
                 AlertDialog dialog = build.create();
 
                 deleteBtn = dialogView.findViewById(R.id.deleteTableBtn);
+                if (intent.getStringExtra("role").equals("staff")) deleteBtn.setVisibility(View.GONE);
                 foodBtn = dialogView.findViewById(R.id.addFoodTableBtn);
                 payTableBtn = dialogView.findViewById(R.id.PayTableBtn);
                 deleteBtn.setOnClickListener(new View.OnClickListener() {
