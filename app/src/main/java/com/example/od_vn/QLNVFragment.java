@@ -102,7 +102,7 @@ public class QLNVFragment extends Fragment {
     public void searchList(String text){
         ArrayList<StaffData> searchList = new ArrayList<>();
         for (StaffData data: staffList){
-            if (data.getUsername().toLowerCase().contains(text.toLowerCase())){
+            if (data.getName().toLowerCase().contains(text.toLowerCase())){
                 searchList.add(data);
             }
         }
