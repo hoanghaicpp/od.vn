@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "694359112065",
+    "firebase_url": "https://odvn-b2af5-default-rtdb.firebaseio.com",
+    "project_id": "odvn-b2af5",
+    "storage_bucket": "odvn-b2af5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694359112065:android:5e6a45e70a32a25a459080",
+        "android_client_info": {
+          "package_name": "com.example.od_vn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "694359112065-o5jl6fpqdsdv0pqttrhs9dtvr0aesred.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa5n5BSYZZ-BltMV83o5e2Q-bxmndPqK8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "694359112065-o5jl6fpqdsdv0pqttrhs9dtvr0aesred.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

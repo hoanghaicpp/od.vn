@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/lightblue"/>
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-75dp"
+                android:background="@drawable/round_back_while_stroke_1000"
+                android:padding="20dp">
+                <View
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/round_back_white_1000"
+                    />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height= "match_parent"
+                    android:adjustViewBounds="true"
+                    android:padding="25dp"
+                    android:src ="@drawable/three_star"
+                    android:id="@+id/ratingImage"
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đánh giá app của chúng tôi"
+                android:textColor="#CC000000"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:layout_gravity="center"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:text="Hãy cho chúng tôi biết cảm nhận của các bạn trong quá trình sử dụng."
+                />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:rating="3"
+                android:id="@+id/ratingBar"
+                android:theme="@style/MyRatingBar"
+                />
+            <EditText
+                android:id="@+id/responseEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhập nhận xét của bạn"
+                android:gravity="center"
+                android:inputType="textMultiLine"
+                android:maxLines="4"
+                android:layout_gravity="center" />
+
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="105dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/lightblue"
+                android:text="Gửi" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:text="Liên hệ với chúng tôi:"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:layout_gravity="center">
+
+               <ImageView
+                   android:id="@+id/imageView"
+                   android:layout_width="75dp"
+                   android:layout_height="48dp"
+                   android:layout_gravity="center_vertical"
+                   android:layout_marginEnd="8dp"
+                   android:src="@drawable/email" />
+
+               <TextView
+                   android:id="@+id/gmailTextView"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:text="od.vn2023@gmail.com"
+                   android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/fbView"
+                    android:layout_width="75dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/fb" />
+
+                <TextView
+                    android:id="@+id/fbTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Quản lý nhà hàng OD.VN"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

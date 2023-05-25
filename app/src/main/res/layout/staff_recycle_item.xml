@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/staffRecCard"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="10dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="48dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/staffRecImg"
+            android:layout_width="92dp"
+            android:layout_height="81dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:padding="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/baseline_person_24" />
+
+        <TextView
+            android:id="@+id/staffRecID"
+            android:layout_width="57dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/staffRecImg"
+            android:text="ID"
+            android:textColor="@color/lightblue"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/staffRecName"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/staffRecID"
+            android:text="Họ tên"
+            android:textColor="@color/lightblue"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/staffEvaluate"
+            android:layout_width="237dp"
+            android:layout_height="29dp"
+            android:layout_below="@+id/staffRecName"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/staffRecImg"
+            android:text="Đánh giá"
+            android:textColor="@color/lightblue"
+            android:textSize="20dp" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

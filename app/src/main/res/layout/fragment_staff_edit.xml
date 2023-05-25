@@ -1,0 +1,82 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FoodEditFragment">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:padding="20dp"
+            android:background="@drawable/light_blue_border">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Đánh giá nhân viên"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:textColor="@color/lightblue"/>
+            <ImageView
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:src="@drawable/baseline_person_24"
+                android:id="@+id/StaffImage"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"/>
+
+            <EditText
+                android:id="@+id/editEvaluate"
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/light_blue_border"
+                android:gravity="start|center_vertical"
+                android:hint="Đánh giá"
+                android:padding="16dp"
+                android:textColor="@color/lavender" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:text="Đánh giá"
+                    android:id="@+id/editStaffButton"
+                    android:textSize="18sp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    app:cornerRadius = "20dp"/>
+
+                <Button
+                    android:id="@+id/cancelEditStaffButton"
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="20dp"
+                    android:text="Hủy"
+                    android:textSize="18sp"
+                    android:layout_marginRight="30dp"
+                    app:cornerRadius="20dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</ScrollView>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".InformationFragment">
+
+    <ImageView
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:id="@+id/profileImg"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/odvn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/info_titleName"-->
+<!--        android:layout_marginTop="0dp"-->
+<!--        android:text="OD.VN"-->
+<!--        android:textColor="@color/lightblue"-->
+<!--        android:textSize="0dp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/profileImg"-->
+<!--        app:layout_constraintStart_toStartOf="@id/profileImg"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/profileImg"/>-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/info_titleUsername"-->
+<!--        android:text="Restaurent manament"-->
+<!--        android:textColor="@color/gray"-->
+<!--        android:textSize="0sp"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/info_titleName"-->
+<!--        app:layout_constraintStart_toStartOf="@id/info_titleName"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/info_titleName"/>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/info_linearLayout"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@drawable/white_background"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileImg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Name"
+                android:layout_weight="1"
+                android:text="Họ tên"
+                android:textStyle="bold"
+                android:textColor="@color/lavender"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/profileName"
+                android:text="name"
+                android:layout_weight="1"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/gray"
+                android:textSize="18sp"/>
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:alpha="0.5"
+            android:background="@color/lavender"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:padding="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Rname"
+                android:layout_weight="1"
+                android:text="Tên nhà hàng"
+                android:textStyle="bold"
+                android:textColor="@color/lavender"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/profileRname"
+                android:text="..."
+                android:layout_weight="1"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/gray"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:alpha="0.5"
+            android:background="@color/lavender"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:padding="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Email"
+                android:layout_weight="1"
+                android:text="Email"
+                android:textStyle="bold"
+                android:textColor="@color/lavender"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/profileEmail"
+                android:text="email"
+                android:layout_weight="1"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/gray"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:alpha="0.5"
+            android:background="@color/lavender"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:padding="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Username"
+                android:layout_weight="1"
+                android:text="Tên đăng nhập"
+                android:textStyle="bold"
+                android:textColor="@color/lavender"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/profileUsername"
+                android:text="username"
+                android:layout_weight="1"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/gray"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:alpha="0.5"
+            android:background="@color/lavender"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:padding="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/password"
+                android:layout_weight="1"
+                android:text="Mật khẩu"
+                android:textStyle="bold"
+                android:textColor="@color/lavender"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/profilePassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="textPassword"
+                android:text="password"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/gray"
+                android:textSize="18sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:id="@+id/editButton"
+        android:gravity="center"
+        android:text="Thay đổi thông tin"
+        android:textSize="18sp"
+        app:cornerRadius = "20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/info_linearLayout"
+        app:layout_constraintStart_toStartOf="@id/info_linearLayout"
+        app:layout_constraintTop_toBottomOf="@id/info_linearLayout"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

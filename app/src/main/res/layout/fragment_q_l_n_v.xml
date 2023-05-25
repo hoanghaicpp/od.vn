@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QLNVFragment"
+    android:orientation="vertical"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:id="@+id/staffsearch"
+            app:iconifiedByDefault="false"
+            app:searchHintIcon="@null"
+            app:queryHint="Tìm kiếm..."
+            android:focusable="false"
+            app:closeIcon="@drawable/baseline_clear_24"
+            app:searchIcon="@drawable/baseline_search_24"
+            android:background="@drawable/light_blue_border"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="558dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="74dp"
+            android:layout_marginBottom="99dp"
+            android:scrollbars="vertical">
+        </androidx.recyclerview.widget.RecyclerView>
+        <Button
+            android:id="@+id/addStaffBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="102dp"
+            android:layout_marginEnd="102dp"
+            android:layout_marginBottom="26dp"
+            android:gravity="center"
+            android:text="Thêm nhân viên"
+            android:textSize="18sp"
+            app:cornerRadius="20dp" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
