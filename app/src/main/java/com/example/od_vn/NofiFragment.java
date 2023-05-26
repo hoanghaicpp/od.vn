@@ -64,12 +64,14 @@ public class NofiFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 nofiData.clear();
                 for (DataSnapshot itemSnapshot: snapshot.getChildren()){
-                    NofiData nofiData1 = new NofiData();
-                    String[] temp = tachChuoi(itemSnapshot.getValue().toString());
-                    nofiData1.setName(temp[0]);
-                    nofiData1.setNofi(transformString(temp[1]));
-                    nofiData1.setTime(itemSnapshot.getKey().toString());
-                    nofiData.add(nofiData1);
+                    if(!itemSnapshot.getKey().equals("staff")) {
+                        NofiData nofiData1 = new NofiData();
+                        String[] temp = tachChuoi(itemSnapshot.getValue().toString());
+                        nofiData1.setName(temp[0]);
+                        nofiData1.setNofi(transformString(temp[1]));
+                        nofiData1.setTime(itemSnapshot.getKey().toString());
+                        nofiData.add(nofiData1);
+                    }
                 }
                 Collections.reverse(nofiData);
                 adapter.notifyDataSetChanged();

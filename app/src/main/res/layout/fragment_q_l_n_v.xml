@@ -48,5 +48,20 @@
             android:text="Thêm nhân viên"
             android:textSize="18sp"
             app:cornerRadius="20dp" />
+
+
     </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/Rebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="@color/lightblue"
+        android:src="@drawable/baseline_signal_cellular_alt_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

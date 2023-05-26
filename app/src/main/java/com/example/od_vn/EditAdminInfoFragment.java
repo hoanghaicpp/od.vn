@@ -165,7 +165,8 @@ public class EditAdminInfoFragment extends Fragment {
                                     public void onDataChange(@NonNull DataSnapshot snapshotE) {
                                         if (!snapshotE.exists() || EmailBefore.equals(EmailAfter)){
                                             reference.child(userForEdit).child("name").setValue(editProfileName.getText().toString());
-                                            reference.child(userForEdit).child("rname").setValue(editProfileRname.getText().toString());
+//                                            reference.child(userForEdit).child("rname").setValue(editProfileRname.getText().toString());
+                                            FirebaseDatabase.getInstance().getReference("Rname").child(userForEdit).setValue(editProfileRname.getText().toString());
                                             reference.child(userForEdit).child("email").setValue(editProfileEmail.getText().toString());
                                             Auth.child(editProfileEmail.getText().toString().replaceAll("@.*", "")).setValue(userForEdit);
                                             auth.getCurrentUser().updateEmail(editProfileEmail.getText().toString());

@@ -200,7 +200,7 @@ public class UploadStaffFragment extends Fragment {
                                 uploadStaffEmail.setError(null);
                                 String StaffName = uploadStaffName.getText().toString();
                                 String StaffPassword = uploadStaffPassword.getText().toString();
-                                StaffData staffData = new StaffData(StaffName, StaffEmail, encryptedUserName, "staff", RnameFromDB, "");
+                                StaffData staffData = new StaffData(StaffName, StaffEmail, encryptedUserName, "staff", RnameFromDB, "", intent.getStringExtra("username"));
                                 DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("users");
                                 if (Max != 0) staffData.setId(Max + 1);
                                 reference1.child(AdminUserName).child(encryptedUserName).setValue(staffData);

@@ -274,6 +274,7 @@ public class SignupActivity extends AppCompatActivity implements GoogleApiClient
                                             String email = signupEmail.getText().toString();
                                             String password = signupPassword.getText().toString();
                                             AdminData adminData = new AdminData(name, email, encryptedUserName, rname, "admin");
+                                            FirebaseDatabase.getInstance().getReference("Rname").child(encryptedUserName).setValue(rname);
                                             signupUser(email, password);
                                             reference.child(encryptedUserName).setValue(adminData);
                                             Toast.makeText(SignupActivity.this, "Đăng kí thành công", Toast.LENGTH_LONG).show();

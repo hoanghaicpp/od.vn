@@ -215,7 +215,7 @@ public class LoginAdminActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             String usernameFromDB = snapshot.child(encryptedUserName).child("username").getValue(String.class);
-                            Intent intent = new Intent(LoginAdminActivity.this,MainActivity.class);
+                            Intent intent = new Intent(LoginAdminActivity.this, MainActivity.class);
                             intent.putExtra("username", usernameFromDB);
                             intent.putExtra("usernameInfo",UserInfo );
                             String rnameFromDB = snapshot.child(encryptedUserName).child("rname").getValue(String.class);

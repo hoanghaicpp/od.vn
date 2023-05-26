@@ -42,8 +42,7 @@ public class UploadFoodFragment extends Fragment {
     Uri uri;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_upload_food, container, false);
         uploadFoodImage = view.findViewById(R.id.uploadFoodImage);
         uploadFoodName = view.findViewById(R.id.uploadFoodName);

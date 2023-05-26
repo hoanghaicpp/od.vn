@@ -36,7 +36,7 @@ public class StaffEditFragment extends Fragment {
                 String StaffUserName = intent.getStringExtra("StaffUserName");
                 String StaffEmail = intent.getStringExtra("StaffEmail");
                 String StaffRname = intent.getStringExtra("StaffRname");
-                StaffData data = new StaffData(StaffName, StaffEmail, StaffUserName, "staff", StaffRname, EditEvaluate.getText().toString());
+                StaffData data = new StaffData(StaffName, StaffEmail, StaffUserName, "staff", StaffRname, EditEvaluate.getText().toString(), intent.getStringExtra("username"));
                 FirebaseDatabase.getInstance().getReference("users").child(StaffUserName).removeValue();
                 FirebaseDatabase.getInstance().getReference("users").child(StaffUserName).setValue(data);
                 FirebaseDatabase.getInstance().getReference("staff").child(AdminUserName).child(StaffUserName).removeValue();

@@ -39,7 +39,7 @@ import java.util.List;
 public class TableAdapter extends RecyclerView.Adapter<TableViewHolder> {
 
     DecimalFormat decimalFormat = new DecimalFormat("#,###");
-    int Price = 0, Sum = 0, temp1=0, tempM = 0, tempS = 0;
+    int Price = 0, Sum = 0, temp1=0, tempM = 0, tempS = 0, tempSF = 0, table  = 0;
 
     TextView SumPrice;
     ValueEventListener eventListener;
@@ -84,7 +84,6 @@ public class TableAdapter extends RecyclerView.Adapter<TableViewHolder> {
                 AlertDialog.Builder build = new AlertDialog.Builder(context);
                 LayoutInflater inflater = LayoutInflater.from(context);
                 View dialogView = inflater.inflate(R.layout.dialog_table_detail,null);
-
                 RecyclerView tableRecyclerView = dialogView.findViewById(R.id.TablefoodRecyclerView);
                 GridLayoutManager gridLayoutManager = new GridLayoutManager(context,1);
                 tableRecyclerView.setLayoutManager(gridLayoutManager);
@@ -230,6 +229,33 @@ public class TableAdapter extends RecyclerView.Adapter<TableViewHolder> {
 
                     }
                 });
+                ref.child("Revenue").child("Activitys").child("staff").child(MonthtimeStamp).child(intent.getStringExtra("username")).child("Money").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists())
+                            tempSF = Integer.parseInt(snapshot.getValue(String.class).trim());
+                        else tempSF = 0;
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+                    }
+                });
+                ref.child("Revenue").child("Activitys").child("staff").child(MonthtimeStamp).child(intent.getStringExtra("username")).child("Tablemake").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists())
+                            table = Integer.parseInt(snapshot.getValue(String.class).trim());
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+                    }
+                });
                 DatabaseReference  reference1 = FirebaseDatabase.getInstance().getReference("restaurants").child(RnameFromDB).child("tables").child(Number);
                 eventListener = reference1.child("TableFoods").addValueEventListener(new ValueEventListener() {
                     @Override
@@ -319,6 +345,7 @@ public class TableAdapter extends RecyclerView.Adapter<TableViewHolder> {
 
                                 }
                             });
+
                             String putRes = intent.getStringExtra("usernameInfo") + "//" + "__||THANH TOÁN||$$Bàn số: " + Number + "$";
                             for (int i = 0; i < foodDataForSave.size(); i++) {
                                 putRes += "$___" + (i + 1) + ". " + foodDataForSave.get(i).getFoodTitle() + ",__Số lượng: " + foodDataForSave.get(i).getCount() + ",__Đơn giá: " + decimalFormat.format(Integer.parseInt(foodDataForSave.get(i).getFoodPrice().toString())) + " VNĐ" + ",__Tổng: " + decimalFormat.format(Integer.valueOf(foodDataForSave.get(i).getFoodPrice()) * foodDataForSave.get(i).getCount()) + " VNĐ$";
@@ -329,6 +356,38 @@ public class TableAdapter extends RecyclerView.Adapter<TableViewHolder> {
                             ref.child("Revenue").child("Days").child(DaytimeStamp).setValue(String.valueOf(Sum + temp1));
                             ref.child("Revenue").child("Months").child(MonthtimeStamp).setValue(String.valueOf(Sum + tempM));
                             ref.child("Revenue").child("Sum").setValue(String.valueOf(Sum + tempS));
+                            if(intent.getStringExtra("role").equals("staff")){
+                                ref.child("Revenue").child("Activitys").child("staff").child(MonthtimeStamp).child(intent.getStringExtra("username")).child("Money").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        if (snapshot.exists())
+                                            tempSF = Integer.parseInt(snapshot.getValue(String.class).trim());
+                                        else tempSF = 0;
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+                                    }
+                                });
+                                ref.child("Revenue").child("Activitys").child("staff").child(MonthtimeStamp).child(intent.getStringExtra("username")).child("Tablemake").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        if (snapshot.exists())
+                                            table = Integer.parseInt(snapshot.getValue(String.class).trim());
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+                                    }
+                                });
+                                System.out.println("@@@@@@@@@@@@@@@"+table);
+                                ref.child("Revenue").child("Activitys").child("staff").child(MonthtimeStamp).child(intent.getStringExtra("username")).child("Money").setValue(String.valueOf(Sum + tempSF));
+                                ref.child("Revenue").child("Activitys").child("staff").child(MonthtimeStamp).child(intent.getStringExtra("username")).child("Tablemake").setValue(String.valueOf((table+1)));
+                            }
                             SumPrice.setText("Tổng tiền");
 
                             reference.child("used").setValue(false);

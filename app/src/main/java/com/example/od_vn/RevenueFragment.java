@@ -76,8 +76,7 @@ public class RevenueFragment extends Fragment {
     Button Dayly,Monthly,Yaerly;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_revenue, container, false);
         barChart = view.findViewById(R.id.chart);
         SumRe = view.findViewById(R.id.ReDay);
@@ -243,7 +242,7 @@ public class RevenueFragment extends Fragment {
                 for(int i =Days.size()-1;i>=0;i--){
                     Float temp = Float.valueOf(0);
                     if (snapshot.child(Days.get(i)).exists())
-                    temp = Float.parseFloat(snapshot.child(Days.get(i)).getValue().toString());
+                        temp = Float.parseFloat(snapshot.child(Days.get(i)).getValue().toString());
                     Values.add(temp);
                 }
                 for (int i = 0;i<Days.size();i++){
@@ -303,7 +302,7 @@ public class RevenueFragment extends Fragment {
                 for(int i =0;i<Months.size();i++){
                     Float temp = Float.valueOf(0);
                     if (snapshot.child(Months.get(i)).exists())
-                    temp = Float.parseFloat(snapshot.child(Months.get(i)).getValue().toString());
+                        temp = Float.parseFloat(snapshot.child(Months.get(i)).getValue().toString());
                     Values.add(temp);
                 }
                 for (int i = 0;i<Months.size();i++){

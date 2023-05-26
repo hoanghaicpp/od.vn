@@ -159,12 +159,14 @@ public class LoginStaffActivity extends AppCompatActivity {
                             Intent intent = new Intent(LoginStaffActivity.this, MainActivity.class);
                             intent.putExtra("username", usernameFromDB);
                             intent.putExtra("usernameInfo", UserInfo);
-                            String rnameFromDB = snapshot.child(encryptedUserName).child("rname").getValue(String.class);
+
                             String roleFromDB = snapshot.child(encryptedUserName).child("role").getValue(String.class);
                             String evaluateFromDB = snapshot.child(encryptedUserName).child("evaluate").getValue(String.class);
+                            String rnameFromDB = snapshot.child(encryptedUserName).child("rname").getValue(String.class);
                             intent.putExtra("rname", rnameFromDB);
                             intent.putExtra("role", roleFromDB);
                             intent.putExtra("evaluate", evaluateFromDB);
+
                             Toast.makeText(LoginStaffActivity.this, "Đăng nhập thành công", Toast.LENGTH_LONG).show();
                             startActivity(intent);
                         }

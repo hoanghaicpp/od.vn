@@ -32,8 +32,7 @@ public class InformationFragment extends Fragment {
 
     TextView profileName, profileEmail, profileUsername, profileRname, profilePassword;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        View view = inflater.inflate(R.layout.fragment_information, container, false);
        bottomNavigationView = getActivity().findViewById(R.id.bottomNavigationView);
@@ -60,7 +59,21 @@ public class InformationFragment extends Fragment {
                 profileName.setText(nameFromDB);
                 profileEmail.setText(emailFromDB);
                 profileUsername.setText(intent.getStringExtra("usernameInfo"));
-                profileRname.setText(rnameFromDB);
+
+                FirebaseDatabase.getInstance().getReference("Rname").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot1) {
+                        String roleFromDB = snapshot.child(usernameFromDB).child("role").getValue(String.class);
+                        String username = usernameFromDB;
+                        if (roleFromDB.equals("staff")) username = snapshot.child(usernameFromDB).child("adminusername").getValue(String.class);
+                        profileRname.setText(snapshot1.child(username).getValue(String.class));
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
 
             @Override
