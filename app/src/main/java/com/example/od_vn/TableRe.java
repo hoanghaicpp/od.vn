@@ -1,7 +1,7 @@
 package com.example.od_vn;
 
 public class TableRe {
-    String rank, id ,name, value, price;
+    String rank, id ,name, value;
 
 
 
